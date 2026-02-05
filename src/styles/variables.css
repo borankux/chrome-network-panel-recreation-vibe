@@ -1,0 +1,194 @@
+/**
+ * Chrome DevTools Network Panel Theme Variables
+ * Supports both light and dark modes
+ */
+
+:root {
+  /* Light Mode (Default) - Chrome DevTools Colors */
+  --cdts-bg-primary: #ffffff;
+  --cdts-bg-secondary: #f3f3f3;
+  --cdts-bg-tertiary: #e8eaed;
+  
+  /* Subtle borders for light mode */
+  --cdts-border: #e5e5e5;
+  --cdts-border-subtle: #f0f0f0;
+  
+  --cdts-text-primary: #202124;
+  --cdts-text-secondary: #5f6368;
+  --cdts-text-tertiary: #80868b;
+  --cdts-accent: #1a73e8;
+  --cdts-accent-hover: #1557b0;
+  --cdts-success: #188038;
+  --cdts-warning: #f9ab00;
+  --cdts-error: #d93025;
+  --cdts-info: #1a73e8;
+}
+
+/* Dark Mode */
+.dark,
+[data-theme="dark"] {
+  --cdts-bg-primary: #1e1e1e;
+  --cdts-bg-secondary: #252526;
+  --cdts-bg-tertiary: #2d2d2d;
+  
+  /* Subtle borders for dark mode */
+  --cdts-border: #333333;
+  --cdts-border-subtle: #2a2a2a;
+  
+  --cdts-text-primary: #cccccc;
+  --cdts-text-secondary: #9d9d9d;
+  --cdts-text-tertiary: #707070;
+  --cdts-accent: #4d90fe;
+  --cdts-accent-hover: #3b7de3;
+  --cdts-success: #81c995;
+  --cdts-warning: #f9ab00;
+  --cdts-error: #f48771;
+  --cdts-info: #4d90fe;
+}
+
+/* Waterfall Phase Colors - Same for both themes */
+:root,
+[data-theme="dark"],
+.dark {
+  --waterfall-queueing: #ff9f43;
+  --waterfall-dns: #feca57;
+  --waterfall-connect: #feca57;
+  --waterfall-ssl: #a29bfe;
+  --waterfall-send: #54a0ff;
+  --waterfall-wait: #1dd1a1;
+  --waterfall-receive: #2e86de;
+}
+
+/* Status Code Colors */
+:root {
+  --status-2xx: #188038;
+  --status-3xx: #f9ab00;
+  --status-4xx: #d93025;
+  --status-5xx: #d93025;
+}
+
+[data-theme="dark"],
+.dark {
+  --status-2xx: #81c995;
+  --status-3xx: #f9ab00;
+  --status-4xx: #f48771;
+  --status-5xx: #f48771;
+}
+
+/* Resource Type Colors */
+:root,
+[data-theme="dark"],
+.dark {
+  --resource-document: #2e86de;
+  --resource-stylesheet: #1dd1a1;
+  --resource-script: #feca57;
+  --resource-image: #a29bfe;
+  --resource-xhr: #ff9f43;
+  --resource-font: #54a0ff;
+  --resource-media: #5f27cd;
+  --resource-wasm: #10ac84;
+  --resource-other: #576574;
+}
+
+/* Syntax Highlighting - Light */
+:root {
+  --syntax-keyword: #d73a49;
+  --syntax-string: #22863a;
+  --syntax-number: #005cc5;
+  --syntax-comment: #6a737d;
+  --syntax-function: #6f42c1;
+  --syntax-variable: #e36209;
+  --syntax-operator: #d73a49;
+  --syntax-punctuation: #24292e;
+}
+
+/* Syntax Highlighting - Dark */
+[data-theme="dark"],
+.dark {
+  --syntax-keyword: #ff7b72;
+  --syntax-string: #a5d6ff;
+  --syntax-number: #79c0ff;
+  --syntax-comment: #8b949e;
+  --syntax-function: #d2a8ff;
+  --syntax-variable: #ffa657;
+  --syntax-operator: #ff7b72;
+  --syntax-punctuation: #c9d1d9;
+}
+
+/* Focus Ring */
+:root {
+  --focus-ring-color: rgba(26, 115, 232, 0.4);
+  --focus-ring-width: 2px;
+}
+
+[data-theme="dark"],
+.dark {
+  --focus-ring-color: rgba(77, 144, 254, 0.4);
+}
+
+/* Shadows */
+:root,
+[data-theme="dark"],
+.dark {
+  --shadow-dropdown: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-modal: 0 8px 24px rgba(0, 0, 0, 0.25);
+  --shadow-tooltip: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cdts-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cdts-border);
+  border-radius: 5px;
+  border: 2px solid var(--cdts-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cdts-text-tertiary);
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--cdts-bg-secondary);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cdts-border) var(--cdts-bg-secondary);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--cdts-accent);
+  color: white;
+}
+
+/* Focus Visible - Subtle */
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: -1px;
+}
+
+/* Prevent text selection on UI elements */
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Monospace font stack */
+.font-mono {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Droid Sans Mono', 'Source Code Pro', monospace;
+}
+
+/* UI font stack */
+.font-ui {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}

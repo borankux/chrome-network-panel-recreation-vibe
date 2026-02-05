@@ -1,0 +1,264 @@
+@import './styles/variables.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Chrome DevTools Light Theme - Subtle Borders */
+    --background: 0 0% 100%;
+    --foreground: 220 9% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 9% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 9% 13%;
+    --primary: 217 91% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 220 9% 13%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 215 14% 42%;
+    --accent: 217 91% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 5 81% 50%;
+    --destructive-foreground: 0 0% 100%;
+    /* Very subtle border for light mode - Chrome DevTools style */
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 217 91% 50%;
+    --radius: 0.25rem;
+  }
+
+  .dark {
+    /* Chrome DevTools Dark Theme - Subtle Borders */
+    --background: 0 0% 12%;
+    --foreground: 0 0% 80%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 80%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 80%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 80%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 62%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 5 70% 70%;
+    --destructive-foreground: 0 0% 12%;
+    /* Very subtle border for dark mode - Chrome DevTools style */
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 217 91% 60%;
+  }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4c4c4c;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #5c5c5c;
+}
+
+/* Selection styles */
+::selection {
+  background: #1a73e8;
+  color: white;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #1a73e8;
+  outline-offset: -2px;
+}
+
+/* Base styles */
+html {
+  font-size: 14px;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Table styles */
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+}
+
+/* Chrome DevTools Subtle Border Utilities */
+@layer utilities {
+  /* Override border colors to be more subtle */
+  .border-subtle {
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+  
+  .dark .border-subtle {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  /* Very subtle border - for dividers */
+  .border-hairline {
+    border-color: rgba(0, 0, 0, 0.06);
+  }
+  
+  .dark .border-hairline {
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+  
+  /* Chrome DevTools specific border styles */
+  .border-cdts {
+    border-color: #d3d3d3;
+  }
+  
+  .dark .border-cdts {
+    border-color: #3c3c3c;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoom-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Utility classes for animations */
+.animate-in {
+  animation: fade-in 0.1s ease-out;
+}
+
+.animate-out {
+  animation: fade-out 0.1s ease-in;
+}
+
+.fade-in-0 {
+  animation-name: fade-in;
+}
+
+.fade-out-0 {
+  animation-name: fade-out;
+}
+
+.zoom-in-95 {
+  animation-name: zoom-in;
+}
+
+.zoom-out-95 {
+  animation-name: zoom-out;
+}
+
+/* Slide animations */
+@keyframes slide-in-from-top-2 {
+  from {
+    transform: translateY(-0.5rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-from-bottom-2 {
+  from {
+    transform: translateY(0.5rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-from-left-2 {
+  from {
+    transform: translateX(-0.5rem);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-from-right-2 {
+  from {
+    transform: translateX(0.5rem);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+[data-side="top"] .animate-in {
+  animation-name: slide-in-from-top-2, fade-in;
+}
+
+[data-side="bottom"] .animate-in {
+  animation-name: slide-in-from-bottom-2, fade-in;
+}
+
+[data-side="left"] .animate-in {
+  animation-name: slide-in-from-left-2, fade-in;
+}
+
+[data-side="right"] .animate-in {
+  animation-name: slide-in-from-right-2, fade-in;
+}
