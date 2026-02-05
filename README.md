@@ -163,6 +163,100 @@ src/
 3. **No Request Blocking**: UI for blocking requests exists but doesn't actually block requests.
 4. **No Throttling Simulation**: Throttling dropdown is UI-only.
 
+---
+
+## 📝 Dialog History - How This Project Was Built
+
+This project was created through a conversational AI-assisted development process. Below is the complete history of prompts used:
+
+### Prompt 1: Project Initialization
+> "summon multiple experts on chrome, react front end and ui recreation, detail experts, project maangers, to reacreate the chrome network tab ui as much as possible with mock data. @PRD-Network-Panel-UI.md"
+
+**Result**: 5 expert subagents were summoned in parallel:
+- React/TypeScript Architect - Project foundation
+- Chrome DevTools UI Specialist - UI components  
+- Data Table & Virtualization Expert - Virtualized table
+- Mock Data Specialist - HAR mock data
+- Project Manager - Integration
+
+**Delivered**: Complete Chrome DevTools Network Panel clone with 175+ mock requests
+
+---
+
+### Prompt 2: Fix Border Styling
+> "I guess tailwind configuration has issues ? acuse borders are so bold, and obvious, can you check it ?"
+
+**Result**: 
+- Changed border colors from `#d4d4d4` to subtler `#e5e5e5` (light) and `#3b3b3b` to `#333333` (dark)
+- Added Chrome DevTools specific color variables
+- Added `.border-subtle`, `.border-hairline` utility classes
+
+---
+
+### Prompt 3: Add Overview Timeline
+> "I think overall is pretty good, but we are missing something arent we ? 概况模块?"
+
+**Result**: 
+- Created `OverviewTimeline.tsx` component
+- Added Canvas-based timeline visualization with color-coded resource bars
+- Added DOMContentLoaded (blue) and Load (red) marker lines
+- Added legend, hover tooltips, and click-to-select functionality
+- Added toggle button in ActionBar
+- Updated store with `showOverview` state
+
+---
+
+### Prompt 4: Start Development Server
+> "npm run dev"
+
+**Result**: Vite dev server started at `http://localhost:3000/`
+
+---
+
+### Prompt 5: Push to GitHub
+> "push it here, git@github.com:borankux/chrome-network-panel-recreation-vibe.git"
+
+**Result**: 
+- Initialized Git repository
+- Committed 48 files (10,096 lines)
+- Pushed to GitHub
+
+---
+
+### Prompt 6: Add Screenshot
+> "tehre is a devnetwork.png on desktop, put that in project and add to the readme top"
+
+**Result**: 
+- Copied `devnetwork.png` from Desktop to `public/`
+- Added screenshot to README top
+- Committed and pushed
+
+---
+
+### Prompt 7: Summarize Prompts
+> "can you summorize all the prompts that I used for this project ?"
+
+**Result**: Generated summary of all prompts used
+
+---
+
+### Prompt 8: Add Dialog History to README
+> "put my prompts in the read me as dialog history. in the readme"
+
+**Result**: Added this section documenting the entire development conversation
+
+---
+
+## 📊 Project Stats
+
+| Metric | Value |
+|--------|-------|
+| Prompts Used | 8 |
+| Code Generated | ~10,000+ lines |
+| Components Built | 20+ |
+| Mock Requests | 175+ |
+| Time to Complete | ~1 hour |
+
 ## License
 
 MIT License
