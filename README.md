@@ -2,6 +2,8 @@
 
 A Chrome DevTools Network Panel UI Clone - A modern web application for analyzing network requests from HAR files.
 
+![Network Panel Screenshot](./public/devnetwork.png)
+
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
 
 ## Features
